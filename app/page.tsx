@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   ExternalLink,
   Mail,
@@ -229,9 +230,13 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-white/[0.06] bg-[#09090b]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
           <a href="#" className="flex items-center gap-3 group">
-            <img
+            <Image
               src="/profile.jpg"
               alt="Siddharth Sharma"
+              width={64}
+              height={64}
+              priority
+              sizes="32px"
               className="h-8 w-8 rounded-full object-cover ring-1 ring-white/10 group-hover:ring-emerald-400/50 transition duration-200"
             />
             <div className="leading-tight">
@@ -330,10 +335,13 @@ export default function Home() {
             <div className="lg:col-span-4 flex flex-col items-center sm:items-start lg:items-center">
               <div className="w-full max-w-[280px] rounded-3xl border border-white/[0.08] bg-zinc-900/40 p-5 space-y-4 backdrop-blur-sm">
                 <div className="relative mx-auto w-36 h-36 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
-                  <img
+                  <Image
                     src="/profile.jpg"
-                    alt="Siddharth Sharma"
-                    className="w-full h-full object-cover object-top"
+                    alt="Portrait of Siddharth Sharma, Senior Middleware and Platform Architect"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 144px, 144px"
+                    className="object-cover object-center"
                   />
                   <div className="absolute inset-0 ring-1 ring-inset ring-black/20 rounded-2xl" />
                 </div>
