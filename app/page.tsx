@@ -20,6 +20,16 @@ import {
   Award,
 } from "lucide-react";
 
+/**
+ * Single source of truth for every outbound link.
+ * Change a handle here and it updates everywhere on the page.
+ */
+const LINKS = {
+  linkedin: "https://www.linkedin.com/in/siddharth-sharma-86646679",
+  github: "https://github.com/BNM-IN",
+  email: "sudd1593@gmail.com",
+} as const;
+
 function LinkedinIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -259,7 +269,7 @@ export default function Home() {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
+              href={LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-xs font-medium text-zinc-300 hover:border-emerald-500/40 hover:text-white transition"
@@ -312,7 +322,7 @@ export default function Home() {
                   Explore Featured Work
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
+                  href={LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.02] px-4 py-2.5 text-xs font-medium text-zinc-300 hover:text-white hover:border-white/20 transition"
@@ -322,7 +332,7 @@ export default function Home() {
                   <ArrowUpRight className="h-3 w-3 text-zinc-500" />
                 </a>
                 <a
-                  href="mailto:sudd1593@gmail.com"
+                  href={`mailto:${LINKS.email}`}
                   className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.02] px-4 py-2.5 text-xs font-medium text-zinc-300 hover:text-white hover:border-white/20 transition"
                 >
                   <Mail className="h-3.5 w-3.5 text-zinc-400" />
@@ -724,14 +734,14 @@ export default function Home() {
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
-                href="mailto:sudd1593@gmail.com"
+                href={`mailto:${LINKS.email}`}
                 className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition"
               >
                 <Mail className="h-3.5 w-3.5" />
                 Send Email
               </a>
               <a
-                href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
+                href={LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.02] px-5 py-3 text-xs font-medium text-white hover:border-emerald-500/30 transition"
@@ -782,7 +792,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-6">
             <a
-              href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
+              href={LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-zinc-300 transition"
@@ -790,14 +800,14 @@ export default function Home() {
               LinkedIn
             </a>
             <a
-              href="https://github.com/BNM-IN/portfolio-website"
+              href={LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-zinc-300 transition"
             >
               GitHub
             </a>
-            <a href="mailto:sudd1593@gmail.com" className="hover:text-zinc-300 transition">
+            <a href={`mailto:${LINKS.email}`} className="hover:text-zinc-300 transition">
               Email
             </a>
           </div>
