@@ -236,9 +236,11 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-white/[0.08] bg-[#09090b]/80 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="#" className="flex items-center gap-2.5 group">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 font-mono text-sm font-semibold text-emerald-400 group-hover:border-emerald-500/50 transition">
-              SS
-            </span>
+            <img
+              src="/profile.jpg"
+              alt="Siddharth Sharma"
+              className="h-9 w-9 rounded-lg object-cover border border-emerald-500/30 group-hover:border-emerald-500/60 transition shadow-sm"
+            />
             <span className="font-semibold tracking-tight text-white hover:text-emerald-400 transition">
               Siddharth Sharma
             </span>
@@ -329,9 +331,24 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Quick Summary Card */}
+            {/* Quick Summary Card with Photo */}
             <div className="lg:col-span-4 rounded-2xl border border-white/10 bg-zinc-900/60 p-6 backdrop-blur-sm space-y-5">
-              <div className="flex items-center justify-between pb-4 border-b border-white/10">
+              {/* Profile Photo & Identity */}
+              <div className="flex flex-col items-center text-center pb-5 border-b border-white/10">
+                <div className="relative group mb-3">
+                  <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-tr from-emerald-500/40 to-teal-400/20 blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                  <img
+                    src="/profile.jpg"
+                    alt="Siddharth Sharma"
+                    className="relative h-28 w-28 sm:h-32 sm:w-32 rounded-2xl object-cover border-2 border-white/10 shadow-xl"
+                  />
+                  <span className="absolute bottom-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-[#09090b]" title="Active"></span>
+                </div>
+                <h2 className="text-lg font-bold text-white tracking-tight">Siddharth Sharma</h2>
+                <p className="text-xs text-emerald-400 font-mono mt-0.5">Senior Middleware &amp; Platform Architect</p>
+              </div>
+
+              <div className="flex items-center justify-between pb-3 border-b border-white/10">
                 <div className="space-y-0.5">
                   <span className="text-xs uppercase tracking-wider text-zinc-400 font-mono">Location</span>
                   <div className="text-sm font-medium text-white flex items-center gap-1.5">
@@ -340,8 +357,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-0.5 text-right">
-                  <span className="text-xs uppercase tracking-wider text-zinc-400 font-mono">Current Role</span>
-                  <div className="text-sm font-medium text-emerald-400">Senior Consultant</div>
+                  <span className="text-xs uppercase tracking-wider text-zinc-400 font-mono">Experience</span>
+                  <div className="text-sm font-medium text-emerald-400">10+ Years</div>
                 </div>
               </div>
 
