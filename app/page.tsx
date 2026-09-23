@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ExternalLink,
   Mail,
@@ -265,9 +266,16 @@ export default function Home() {
             <a href="#work" className="hover:text-white transition">Work</a>
             <a href="#skills" className="hover:text-white transition">Skills</a>
             <a href="#credentials" className="hover:text-white transition">Credentials</a>
+            <Link href="/writing" className="hover:text-white transition">Writing</Link>
           </nav>
 
           <div className="flex items-center gap-3">
+            <Link
+              href="/writing"
+              className="md:hidden inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-zinc-300 hover:border-emerald-500/40 hover:text-white transition"
+            >
+              Writing
+            </Link>
             <a
               href={LINKS.linkedin}
               target="_blank"
