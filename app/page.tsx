@@ -2,27 +2,21 @@
 
 import React, { useState } from "react";
 import {
-  Server,
-  Cpu,
-  Layers,
-  ShieldCheck,
-  CheckCircle2,
   ExternalLink,
   Mail,
-  Phone,
   MapPin,
-  Award,
-  GraduationCap,
   Briefcase,
   ArrowUpRight,
-  Activity,
   Sparkles,
   Copy,
   Check,
   Terminal,
   Workflow,
-  ChevronRight,
-  Code2,
+  Shield,
+  Layers,
+  Cpu,
+  GraduationCap,
+  Award,
 } from "lucide-react";
 
 function LinkedinIcon({ className }: { className?: string }) {
@@ -73,11 +67,11 @@ export default function Home() {
   const certifications = [
     {
       name: "AWS Certified AI Practitioner",
-      authority: "Amazon Web Services (AWS)",
+      authority: "Amazon Web Services",
       period: "Nov 2025 – Nov 2028",
       credentialId: "f97e5074af764303a609fd82866c5e0d",
       url: "https://aws.amazon.com/verification",
-      badgeType: "AI / Cloud",
+      tag: "AI & ML",
     },
     {
       name: "Google Cloud Certified Generative AI Leader",
@@ -85,7 +79,7 @@ export default function Home() {
       period: "Nov 2025 – Nov 2028",
       credentialId: "a3f13837c17e498a84f3e43cbbfc60a8",
       url: "https://www.credly.com/badges/7f3f6022-de0d-4373-9fe3-7d31362c2414",
-      badgeType: "GenAI",
+      tag: "GenAI",
     },
     {
       name: "GitHub Copilot Certified",
@@ -93,7 +87,7 @@ export default function Home() {
       period: "Oct 2025 – Oct 2027",
       credentialId: "35C5B90CBB8EE53C",
       url: "https://learn.microsoft.com/en-us/users/siddharthsharma-4805/transcript",
-      badgeType: "AI Tools",
+      tag: "Developer Tools",
     },
     {
       name: "Google Cloud Certified Cloud Digital Leader",
@@ -101,60 +95,61 @@ export default function Home() {
       period: "Nov 2025 – Nov 2028",
       credentialId: "8d908a6f405949e4b8bdcaca964275ce",
       url: "https://www.credly.com/badges/d1e17e43-13ea-4cf3-8dc8-9e368020241b",
-      badgeType: "Cloud",
+      tag: "Cloud",
     },
     {
       name: "AWS Certified Cloud Practitioner",
-      authority: "Amazon Web Services (AWS)",
+      authority: "Amazon Web Services",
       period: "Nov 2022 – Aug 2028",
       credentialId: "W9KYJNFCREQE1JGH",
       url: "https://aws.amazon.com/verification",
-      badgeType: "Cloud",
+      tag: "Cloud",
     },
   ];
 
   const featuredWork = [
     {
+      index: "01",
       title: "Autonomous Self-Healing Middleware Pipelines",
       organization: "HCLTech",
       role: "Senior Consultant",
       summary:
-        "Designed and implemented autonomous self-healing scripts and automated CI/CD pipelines using Python, Shell, and Jenkins.",
-      impact: "Eliminated manual environment resets and slashed operational toil by 45%.",
-      technologies: ["Python", "Jenkins", "Bash Scripting", "CI/CD", "AWS", "GCP"],
-      category: "Automation",
+        "Designed and implemented autonomous self-healing scripts and automated CI/CD pipelines using Python, Shell, and Jenkins, completely eliminating manual environment resets.",
+      impact: "Reduced repetitive operational toil by 45% across enterprise cloud ecosystems (AWS/GCP).",
+      technologies: ["Python", "Jenkins", "Bash", "CI/CD", "AWS", "GCP"],
     },
     {
+      index: "02",
       title: "Zero-Downtime Enterprise WebSphere Migration",
       organization: "Capgemini",
       role: "Associate Consultant",
       summary:
-        "Led high-stakes migration projects for critical enterprise applications from IBM WebSphere v8 legacy to high-performance v9.0.5 containerized platforms.",
-      impact: "Executed zero-downtime cutover across multi-tiered enterprise production environments.",
-      technologies: ["IBM WebSphere", "Linux Admin", "Containerization", "Performance Tuning"],
-      category: "Architecture",
+        "Led critical application migrations from legacy IBM WebSphere v8 to high-performance v9.0.5 containerized platforms with rigorous load testing.",
+      impact: "Executed seamless zero-downtime cutover across multi-tiered enterprise stacks.",
+      technologies: ["IBM WebSphere", "Linux Administration", "Containerization", "High Availability"],
     },
     {
+      index: "03",
       title: "Real-Time Telemetry & Proactive Anomaly Detection",
       organization: "HCLTech",
       role: "Senior Consultant",
       summary:
         "Architected telemetry pipelines and continuous observability dashboards using Splunk and Grafana with automated alert thresholds.",
-      impact: "Transformed production support from reactive crisis response into proactive anomaly detection.",
-      technologies: ["Splunk", "Grafana", "Observability", "SRE", "Alerting Engine"],
-      category: "SRE & Telemetry",
+      impact: "Transformed production support from reactive crisis firefighting to proactive anomaly prevention.",
+      technologies: ["Splunk", "Grafana", "Observability", "Telemetry", "SRE"],
     },
     {
+      index: "04",
       title: "Agentic AI & MCP Framework Integration",
       organization: "Enterprise R&D / HCLTech",
       role: "Senior Architect",
       summary:
         "Spearheaded the secure integration of Agentic AI pipelines, LLM workflows, and Model Context Protocol (MCP) data channels into legacy middleware stacks.",
-      impact: "Ensured strict enterprise data governance, lineage tracing, and high-throughput reliability.",
+      impact: "Enforced strict enterprise data governance, lineage tracing, and high-throughput reliability.",
       technologies: ["Agentic AI", "Model Context Protocol (MCP)", "AWS Bedrock", "Prompt Architecture"],
-      category: "Agentic AI",
     },
     {
+      index: "05",
       title: "Enterprise Security Re-Architecture & IAM Hardening",
       organization: "Capgemini",
       role: "Associate Consultant",
@@ -162,14 +157,13 @@ export default function Home() {
         "Re-architected and hardened system security layers, deploying robust SSL/TLS certificate configurations and Object Lock protocols.",
       impact: "Eliminated vulnerabilities across critical object storage assets and enforced strict IAM boundaries.",
       technologies: ["SSL/TLS", "IAM Policy", "Object Lock", "Security Governance"],
-      category: "Security",
     },
   ];
 
-  const skillGroups = [
+  const skillCategories = [
     {
-      name: "Cloud & Infrastructure",
-      items: [
+      category: "Cloud & Infrastructure",
+      skills: [
         "Amazon Web Services (AWS)",
         "Google Cloud Platform (GCP)",
         "Amazon EC2 & Lambda",
@@ -179,8 +173,8 @@ export default function Home() {
       ],
     },
     {
-      name: "Middleware & Integration",
-      items: [
+      category: "Middleware & Integration",
+      skills: [
         "IBM WebSphere Application Server",
         "TIBCO BusinessWorks & EMS",
         "TIBCO iProcess",
@@ -190,8 +184,8 @@ export default function Home() {
       ],
     },
     {
-      name: "Automation & Platform Ops",
-      items: [
+      category: "Automation & Platform Ops",
+      skills: [
         "Python (Automation & Scripting)",
         "Jenkins CI/CD Pipelines",
         "Shell & Bash Scripting",
@@ -201,8 +195,8 @@ export default function Home() {
       ],
     },
     {
-      name: "Agentic AI & Modern Tools",
-      items: [
+      category: "Agentic AI & Next-Gen Systems",
+      skills: [
         "Agentic AI Frameworks",
         "Model Context Protocol (MCP)",
         "AWS Bedrock",
@@ -212,47 +206,50 @@ export default function Home() {
       ],
     },
     {
-      name: "SRE & Observability",
-      items: [
+      category: "SRE & Observability",
+      skills: [
         "Splunk Telemetry",
         "Grafana Observability",
         "Root Cause Analysis (RCA)",
         "Incident & Change Management",
         "ITIL / ITSM Frameworks",
-        "Production Support (24/7)",
+        "24/7 Production Support",
       ],
     },
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#09090b] text-[#f4f4f5]">
-      {/* Subtle Background Lighting */}
-      <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-emerald-500/[0.04] blur-[120px]" />
-        <div className="absolute top-[40%] right-[-10%] h-[600px] w-[600px] rounded-full bg-sky-500/[0.03] blur-[140px]" />
+    <div className="min-h-screen bg-[#09090b] text-zinc-100 antialiased selection:bg-emerald-500/20 selection:text-white">
+      {/* Background Subtle Gradient */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-gradient-to-b from-white/[0.03] to-transparent blur-3xl opacity-70" />
       </div>
 
-      {/* Top Navigation */}
-      <header className="sticky top-0 z-50 w-full border-b border-white/[0.08] bg-[#09090b]/80 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="#" className="flex items-center gap-2.5 group">
+      {/* Persistent Minimal Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-white/[0.06] bg-[#09090b]/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+          <a href="#" className="flex items-center gap-3 group">
             <img
               src="/profile.jpg"
               alt="Siddharth Sharma"
-              className="h-9 w-9 rounded-lg object-cover border border-emerald-500/30 group-hover:border-emerald-500/60 transition shadow-sm"
+              className="h-8 w-8 rounded-full object-cover ring-1 ring-white/10 group-hover:ring-emerald-400/50 transition duration-200"
             />
-            <span className="font-semibold tracking-tight text-white hover:text-emerald-400 transition">
-              Siddharth Sharma
-            </span>
+            <div className="leading-tight">
+              <span className="text-sm font-medium tracking-tight text-white group-hover:text-emerald-400 transition">
+                Siddharth Sharma
+              </span>
+              <span className="hidden sm:block text-[11px] font-mono text-zinc-500">
+                Platform &amp; AI Architect
+              </span>
+            </div>
           </a>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm text-zinc-400 font-medium">
+          <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-zinc-400">
             <a href="#about" className="hover:text-white transition">About</a>
             <a href="#experience" className="hover:text-white transition">Experience</a>
-            <a href="#projects" className="hover:text-white transition">Featured Work</a>
+            <a href="#work" className="hover:text-white transition">Work</a>
             <a href="#skills" className="hover:text-white transition">Skills</a>
-            <a href="#certifications" className="hover:text-white transition">Certifications</a>
-            <a href="#contact" className="hover:text-white transition">Contact</a>
+            <a href="#credentials" className="hover:text-white transition">Credentials</a>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -260,189 +257,144 @@ export default function Home() {
               href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-zinc-300 hover:border-emerald-500/40 hover:text-white transition"
-              aria-label="LinkedIn Profile"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-xs font-medium text-zinc-300 hover:border-emerald-500/40 hover:text-white transition"
             >
-              <LinkedinIcon className="h-3.5 w-3.5 text-emerald-400" />
-              <span className="hidden sm:inline">LinkedIn</span>
+              <LinkedinIcon className="h-3 w-3 text-emerald-400" />
+              <span>LinkedIn</span>
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500 px-3.5 py-1.5 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition"
+              className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3.5 py-1 text-xs font-semibold text-zinc-950 hover:bg-white hover:shadow-sm transition"
             >
-              Get in Touch
+              Contact
             </a>
           </div>
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 space-y-24">
+      <main className="mx-auto max-w-5xl px-6 py-16 sm:py-24 space-y-28 sm:space-y-36">
         {/* HERO SECTION */}
-        <section className="relative pt-6 sm:pt-12">
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-medium text-emerald-400 mb-6">
+        <section className="space-y-12">
+          {/* Availability Pill */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/[0.06] px-3 py-1 text-xs font-medium text-emerald-400">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
             </span>
-            Available for Enterprise Architecture &amp; Platform Engineering
+            <span>Available for Enterprise Architecture &amp; Platform Engineering</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Content */}
             <div className="lg:col-span-8 space-y-6">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-[-0.03em] text-white leading-[1.12]">
                 Architecting self-healing enterprise platforms &amp;{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
-                  Agentic AI pipelines.
-                </span>
+                <span className="font-medium text-emerald-400">Agentic AI pipelines.</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed max-w-3xl">
+              <p className="text-base sm:text-lg text-zinc-400 font-normal leading-relaxed max-w-2xl">
                 Senior Middleware &amp; Platform Architect with over a decade in Linux Platform
-                Operations, Enterprise Middleware, and Cloud Infrastructure—shifting legacy systems
-                from manual toil into automated, high-availability runtime environments.
+                Operations, Enterprise Middleware, and Cloud Infrastructure—transitioning legacy
+                systems from high-latency manual toil into automated, cloud-native runtime environments.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
-                  href="#projects"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-zinc-950 hover:bg-emerald-400 transition shadow-lg shadow-emerald-500/10 active:scale-[0.98]"
+                  href="#work"
+                  className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition"
                 >
-                  <Workflow className="h-4 w-4" />
-                  View Featured Work
+                  <Workflow className="h-3.5 w-3.5" />
+                  Explore Featured Work
                 </a>
                 <a
                   href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-white hover:border-emerald-500/30 hover:bg-white/[0.08] transition active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.02] px-4 py-2.5 text-xs font-medium text-zinc-300 hover:text-white hover:border-white/20 transition"
                 >
-                  <LinkedinIcon className="h-4 w-4 text-emerald-400" />
-                  LinkedIn Profile
-                  <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400" />
+                  <LinkedinIcon className="h-3.5 w-3.5 text-emerald-400" />
+                  LinkedIn
+                  <ArrowUpRight className="h-3 w-3 text-zinc-500" />
                 </a>
                 <a
                   href="mailto:sudd1593@gmail.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:border-white/20 transition active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.02] px-4 py-2.5 text-xs font-medium text-zinc-300 hover:text-white hover:border-white/20 transition"
                 >
-                  <Mail className="h-4 w-4 text-zinc-400" />
+                  <Mail className="h-3.5 w-3.5 text-zinc-400" />
                   Email Me
                 </a>
               </div>
             </div>
 
-            {/* Quick Summary Card with Photo */}
-            <div className="lg:col-span-4 rounded-2xl border border-white/10 bg-zinc-900/60 p-6 backdrop-blur-sm space-y-5">
-              {/* Profile Photo & Identity */}
-              <div className="flex flex-col items-center text-center pb-5 border-b border-white/10">
-                <div className="relative group mb-3">
-                  <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-tr from-emerald-500/40 to-teal-400/20 blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            {/* Right Profile Frame */}
+            <div className="lg:col-span-4 flex flex-col items-center sm:items-start lg:items-center">
+              <div className="w-full max-w-[280px] rounded-3xl border border-white/[0.08] bg-zinc-900/40 p-5 space-y-4 backdrop-blur-sm">
+                <div className="relative mx-auto w-36 h-36 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
                   <img
                     src="/profile.jpg"
                     alt="Siddharth Sharma"
-                    className="relative h-28 w-28 sm:h-32 sm:w-32 rounded-2xl object-cover border-2 border-white/10 shadow-xl"
+                    className="w-full h-full object-cover object-top"
                   />
-                  <span className="absolute bottom-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-[#09090b]" title="Active"></span>
+                  <div className="absolute inset-0 ring-1 ring-inset ring-black/20 rounded-2xl" />
                 </div>
-                <h2 className="text-lg font-bold text-white tracking-tight">Siddharth Sharma</h2>
-                <p className="text-xs text-emerald-400 font-mono mt-0.5">Senior Middleware &amp; Platform Architect</p>
-              </div>
 
-              <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                <div className="space-y-0.5">
-                  <span className="text-xs uppercase tracking-wider text-zinc-400 font-mono">Location</span>
-                  <div className="text-sm font-medium text-white flex items-center gap-1.5">
-                    <MapPin className="h-3.5 w-3.5 text-emerald-400" />
+                <div className="text-center space-y-1">
+                  <div className="text-base font-semibold text-white tracking-tight">Siddharth Sharma</div>
+                  <div className="text-xs text-zinc-400">Senior Consultant • HCLTech</div>
+                  <div className="text-xs font-mono text-emerald-400 flex items-center justify-center gap-1 pt-0.5">
+                    <MapPin className="h-3 w-3" />
                     Delhi, India
                   </div>
                 </div>
-                <div className="space-y-0.5 text-right">
-                  <span className="text-xs uppercase tracking-wider text-zinc-400 font-mono">Experience</span>
-                  <div className="text-sm font-medium text-emerald-400">10+ Years</div>
-                </div>
-              </div>
 
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    <Briefcase className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-zinc-400">Current Organization</div>
-                    <div className="text-sm font-medium text-white">HCLTech</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                    <Award className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-zinc-400">Certifications</div>
-                    <div className="text-sm font-medium text-white">AWS &amp; GCP AI Practitioner</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                    <GraduationCap className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-zinc-400">Education</div>
-                    <div className="text-sm font-medium text-white">BTech (2011 – 2015)</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-3 border-t border-white/10">
-                <div className="text-xs text-zinc-400 font-mono">DIRECT CONTACT</div>
-                <div className="mt-2 flex items-center justify-between text-xs text-zinc-300">
-                  <span className="truncate">sudd1593@gmail.com</span>
+                <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-zinc-400">
+                  <span className="font-mono text-[11px]">sudd1593@gmail.com</span>
                   <button
                     onClick={() => copyToClipboard("sudd1593@gmail.com", "email")}
-                    className="inline-flex items-center gap-1 rounded bg-white/5 px-2 py-1 hover:bg-emerald-500/20 hover:text-emerald-400 transition"
+                    className="text-zinc-300 hover:text-emerald-400 transition"
                     title="Copy Email"
                   >
-                    {copiedEmail ? <Check className="h-3 w-3 text-emerald-400" /> : <Copy className="h-3 w-3" />}
-                    <span>{copiedEmail ? "Copied" : "Copy"}</span>
+                    {copiedEmail ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
                   </button>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Metric Highlights Grid */}
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="rounded-xl border border-white/5 bg-zinc-900/40 p-4">
-              <div className="text-2xl sm:text-3xl font-extrabold text-white">10+</div>
-              <div className="text-xs text-zinc-400 mt-1">Years Enterprise Experience</div>
+          {/* Minimalist Metrics Strip */}
+          <div className="pt-6 border-t border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="space-y-1">
+              <div className="text-3xl sm:text-4xl font-light tracking-tight text-white font-mono">10+</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider font-mono">Years Experience</div>
             </div>
-            <div className="rounded-xl border border-white/5 bg-zinc-900/40 p-4">
-              <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">45%</div>
-              <div className="text-xs text-zinc-400 mt-1">Operational Toil Reduction</div>
+            <div className="space-y-1">
+              <div className="text-3xl sm:text-4xl font-light tracking-tight text-emerald-400 font-mono">45%</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider font-mono">Toil Reduction</div>
             </div>
-            <div className="rounded-xl border border-white/5 bg-zinc-900/40 p-4">
-              <div className="text-2xl sm:text-3xl font-extrabold text-white">0</div>
-              <div className="text-xs text-zinc-400 mt-1">Downtime Cutover Record</div>
+            <div className="space-y-1">
+              <div className="text-3xl sm:text-4xl font-light tracking-tight text-white font-mono">0</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider font-mono">Cutover Downtime</div>
             </div>
-            <div className="rounded-xl border border-white/5 bg-zinc-900/40 p-4">
-              <div className="text-2xl sm:text-3xl font-extrabold text-sky-400">5</div>
-              <div className="text-xs text-zinc-400 mt-1">Cloud &amp; AI Certifications</div>
+            <div className="space-y-1">
+              <div className="text-3xl sm:text-4xl font-light tracking-tight text-zinc-200 font-mono">5</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider font-mono">Cloud &amp; AI Certifications</div>
             </div>
           </div>
         </section>
 
-        {/* ABOUT ME SECTION */}
-        <section id="about" className="space-y-6 pt-6">
-          <div className="flex items-center gap-2">
-            <Terminal className="h-5 w-5 text-emerald-400" />
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+        {/* ABOUT & PRINCIPLES SECTION */}
+        <section id="about" className="space-y-10 pt-4 border-t border-white/[0.06]">
+          <div className="space-y-1">
+            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-500">
+              Overview
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-white">
               About &amp; Core Philosophy
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-7 space-y-5 text-zinc-300 text-base leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+            <div className="md:col-span-7 space-y-5 text-zinc-300 text-sm sm:text-base leading-relaxed font-normal">
               <p>
                 I design self-healing platform architectures that transition legacy enterprise
                 infrastructure from high-latency manual toil into automated, cloud-native runtime
@@ -461,26 +413,26 @@ export default function Home() {
             </div>
 
             <div className="md:col-span-5 space-y-4">
-              {/* Executional Principle Card */}
-              <div className="rounded-2xl border border-emerald-500/20 bg-emerald-950/10 p-5 space-y-2">
-                <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold">
-                  <Workflow className="h-4 w-4" />
+              {/* Executional Principle */}
+              <div className="rounded-2xl border border-white/[0.08] bg-zinc-900/30 p-6 space-y-2">
+                <div className="flex items-center gap-2 text-emerald-400 text-xs font-mono uppercase tracking-wider">
+                  <Terminal className="h-3.5 w-3.5" />
                   <span>Executional Principle</span>
                 </div>
-                <p className="text-sm text-zinc-300 leading-normal">
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                   “I automate manual overhead out of the runtime environment. If a repetitive
                   operational chore takes 20 minutes of manual toil, my immediate script target is to build a
                   Python workflow or Jenkins pipeline to safely execute it in 4 seconds.”
                 </p>
               </div>
 
-              {/* Current Sprint Card */}
-              <div className="rounded-2xl border border-sky-500/20 bg-sky-950/10 p-5 space-y-2">
-                <div className="flex items-center gap-2 text-sky-400 text-sm font-semibold">
-                  <Sparkles className="h-4 w-4" />
+              {/* Current Sprint */}
+              <div className="rounded-2xl border border-white/[0.08] bg-zinc-900/30 p-6 space-y-2">
+                <div className="flex items-center gap-2 text-zinc-300 text-xs font-mono uppercase tracking-wider">
+                  <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
                   <span>Current Sprint</span>
                 </div>
-                <p className="text-sm text-zinc-300 leading-normal">
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                   Deep inside an intensive AWS Generative AI Developer track—focusing on integrating
                   multi-agent orchestration loops, real-time behavioral telemetry, and Model Context
                   Protocol (MCP) frameworks into enterprise platform layers.
@@ -490,54 +442,53 @@ export default function Home() {
           </div>
         </section>
 
-        {/* WORK EXPERIENCE SECTION */}
-        <section id="experience" className="space-y-8 pt-6">
-          <div className="flex items-center gap-2">
-            <Briefcase className="h-5 w-5 text-emerald-400" />
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+        {/* WORK EXPERIENCE */}
+        <section id="experience" className="space-y-10 pt-4 border-t border-white/[0.06]">
+          <div className="space-y-1">
+            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-500">
+              Career Trajectory
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-white">
               Work Experience
             </h2>
           </div>
 
-          <div className="space-y-8 border-l border-zinc-800 ml-3 pl-6 sm:pl-8">
+          <div className="space-y-12">
             {/* Role 1: HCLTech */}
-            <div className="relative space-y-4">
-              <span className="absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 ring-4 ring-[#09090b]"></span>
-              <div>
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-xl font-bold text-white">Senior Consultant</h3>
-                  <span className="rounded-full bg-emerald-500/10 px-3 py-1 font-mono text-xs font-semibold text-emerald-400 border border-emerald-500/20">
-                    Jul 2019 – Present
-                  </span>
+            <div className="group rounded-2xl border border-white/[0.06] bg-zinc-900/20 p-6 sm:p-8 space-y-5 hover:border-white/10 transition">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+                <div>
+                  <h3 className="text-xl font-medium text-white tracking-tight">Senior Consultant</h3>
+                  <div className="text-xs text-zinc-400 mt-0.5">
+                    <span className="font-semibold text-zinc-200">HCLTech</span> • Noida, India
+                  </div>
                 </div>
-                <div className="text-sm text-zinc-400 flex items-center gap-2 mt-1">
-                  <span className="font-semibold text-zinc-200">HCLTech</span>
-                  <span>•</span>
-                  <span>Noida, India</span>
-                </div>
+                <span className="self-start sm:self-auto rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 font-mono text-xs text-emerald-400">
+                  Jul 2019 – Present
+                </span>
               </div>
 
-              <ul className="space-y-2.5 text-zinc-300 text-sm leading-relaxed">
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+              <ul className="space-y-3 text-sm text-zinc-300 leading-relaxed">
+                <li className="flex items-start gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0 mt-2" />
                   <span>
                     Engineered and automated end-to-end middleware provisioning and deployment infrastructure across enterprise cloud ecosystems (AWS/GCP), successfully migrating legacy application architectures into modern containerized environments.
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0 mt-2" />
                   <span>
                     Designed and implemented autonomous self-healing scripts and CI/CD pipelines using Python, Shell scripting, and Jenkins, completely eliminating manual environment resets and cutting operational toil by 45%.
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0 mt-2" />
                   <span>
                     Architected telemetry and continuous observability dashboards (Splunk/Grafana), setting up real-time alerting systems that transformed production support teams from a reactive crisis state to proactive anomaly detection.
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0 mt-2" />
                   <span>
                     Spearheaded the secure integration of Agentic AI pipelines and large language model (LLM) workflows into legacy core middleware frameworks, ensuring strict data governance, lineage tracing, and high-throughput reliability.
                   </span>
@@ -546,43 +497,40 @@ export default function Home() {
             </div>
 
             {/* Role 2: Capgemini */}
-            <div className="relative space-y-4 pt-6">
-              <span className="absolute -left-[31px] sm:-left-[39px] top-7.5 flex h-4 w-4 items-center justify-center rounded-full bg-zinc-600 ring-4 ring-[#09090b]"></span>
-              <div>
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-xl font-bold text-white">Associate Consultant</h3>
-                  <span className="rounded-full bg-zinc-800 px-3 py-1 font-mono text-xs text-zinc-400 border border-zinc-700">
-                    Aug 2015 – Oct 2018
-                  </span>
+            <div className="group rounded-2xl border border-white/[0.06] bg-zinc-900/20 p-6 sm:p-8 space-y-5 hover:border-white/10 transition">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+                <div>
+                  <h3 className="text-xl font-medium text-white tracking-tight">Associate Consultant</h3>
+                  <div className="text-xs text-zinc-400 mt-0.5">
+                    <span className="font-semibold text-zinc-200">Capgemini Pvt Ltd</span> • Airoli, Navi Mumbai, India
+                  </div>
                 </div>
-                <div className="text-sm text-zinc-400 flex items-center gap-2 mt-1">
-                  <span className="font-semibold text-zinc-200">Capgemini Pvt Ltd</span>
-                  <span>•</span>
-                  <span>Airoli, Navi Mumbai, India</span>
-                </div>
+                <span className="self-start sm:self-auto rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-xs text-zinc-400">
+                  Aug 2015 – Oct 2018
+                </span>
               </div>
 
-              <ul className="space-y-2.5 text-zinc-300 text-sm leading-relaxed">
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-zinc-400 shrink-0 mt-0.5" />
+              <ul className="space-y-3 text-sm text-zinc-300 leading-relaxed">
+                <li className="flex items-start gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 shrink-0 mt-2" />
                   <span>
                     Led high-stakes migration projects for critical enterprise applications from IBM WebSphere legacy versions (v8) to high-performance v9.0.5 containerized platforms, ensuring zero-downtime cutovers.
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-zinc-400 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 shrink-0 mt-2" />
                   <span>
                     Owned root-cause analysis (RCA) and system optimization for complex, multi-tiered infrastructure stacks, successfully isolating performance bottlenecks under high-volume load spikes.
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-zinc-400 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 shrink-0 mt-2" />
                   <span>
                     Re-architected and hardened system security layers, deploying robust SSL/TLS certificate configurations, strict IAM permission boundaries, and Object Lock protocols to eliminate vulnerabilities across critical object storage assets.
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-zinc-400 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 shrink-0 mt-2" />
                   <span>
                     Managed global 24/7 production support bridges, translating complex system errors into actionable, rapid resolution pathways while mentoring junior engineers on advanced Linux administration and automated logging diagnostics.
                   </span>
@@ -592,94 +540,87 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FEATURED WORK & PROJECTS SECTION */}
-        <section id="projects" className="space-y-6 pt-6">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <Workflow className="h-5 w-5 text-emerald-400" />
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                Featured Work &amp; Architecture Projects
+        {/* FEATURED WORK & ARCHITECTURE PROJECTS */}
+        <section id="work" className="space-y-10 pt-4 border-t border-white/[0.06]">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div className="space-y-1">
+              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-500">
+                Selected Work
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-white">
+                Featured Architecture Projects
               </h2>
             </div>
-            <p className="text-xs text-zinc-400 font-mono">
-              REAL ENTERPRISE CASE STUDIES
-            </p>
+            <div className="text-xs font-mono text-zinc-500">5 CASE STUDIES</div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featuredWork.map((project, index) => (
+            {featuredWork.map((project, idx) => (
               <div
-                key={index}
-                className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-zinc-900/50 p-6 hover:border-emerald-500/40 hover:bg-zinc-900/80 transition-all duration-300"
+                key={idx}
+                className="group flex flex-col justify-between rounded-2xl border border-white/[0.06] bg-zinc-900/20 p-7 hover:border-emerald-500/30 hover:bg-zinc-900/40 transition duration-300"
               >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="rounded bg-white/5 px-2.5 py-1 text-xs font-mono text-emerald-400 border border-white/10">
-                      {project.category}
-                    </span>
-                    <span className="text-xs font-mono text-zinc-400">
-                      {project.organization}
-                    </span>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="text-emerald-400 font-semibold">{project.index}</span>
+                    <span className="text-zinc-500">{project.organization}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition">
+                  <h3 className="text-lg font-medium text-white group-hover:text-emerald-300 transition">
                     {project.title}
                   </h3>
 
-                  <p className="text-sm text-zinc-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     {project.summary}
                   </p>
 
-                  <div className="rounded-xl border border-emerald-500/20 bg-emerald-950/20 p-3">
-                    <div className="text-xs font-semibold text-emerald-400">Impact Result:</div>
-                    <div className="text-xs text-zinc-200 mt-0.5">{project.impact}</div>
+                  <div className="border-l-2 border-emerald-500/40 pl-3 py-0.5">
+                    <div className="text-[11px] font-mono uppercase tracking-wider text-emerald-400">Impact</div>
+                    <div className="text-xs text-zinc-300 mt-0.5">{project.impact}</div>
                   </div>
                 </div>
 
-                <div className="mt-5 pt-4 border-t border-white/5">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="rounded-md bg-white/[0.04] px-2 py-0.5 text-xs text-zinc-400 border border-white/5"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <div className="mt-6 pt-4 border-t border-white/[0.05] flex flex-wrap gap-1.5">
+                  {project.technologies.map((tech, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="rounded-md bg-white/[0.03] px-2 py-0.5 text-[11px] font-mono text-zinc-400 border border-white/[0.05]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* SKILLS MATRIX SECTION */}
-        <section id="skills" className="space-y-6 pt-6">
-          <div className="flex items-center gap-2">
-            <Cpu className="h-5 w-5 text-emerald-400" />
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-              Skills &amp; Technical Capabilities
+        {/* SKILLS MATRIX */}
+        <section id="skills" className="space-y-10 pt-4 border-t border-white/[0.06]">
+          <div className="space-y-1">
+            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-500">
+              Capabilities
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-white">
+              Skills &amp; Technical Stack
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillGroups.map((group, idx) => (
+            {skillCategories.map((cat, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl border border-white/10 bg-zinc-900/40 p-5 space-y-4 hover:border-emerald-500/30 transition"
+                className="rounded-2xl border border-white/[0.06] bg-zinc-900/20 p-6 space-y-4"
               >
-                <div className="flex items-center gap-2 border-b border-white/10 pb-3">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                  <h3 className="font-semibold text-white text-base">{group.name}</h3>
+                <div className="text-sm font-medium text-white border-b border-white/[0.06] pb-3 flex items-center justify-between">
+                  <span>{cat.category}</span>
+                  <span className="text-[10px] font-mono text-emerald-400/80">0{idx + 1}</span>
                 </div>
 
                 <ul className="space-y-2">
-                  {group.items.map((skill, sIdx) => (
-                    <li
-                      key={sIdx}
-                      className="flex items-center gap-2 text-sm text-zinc-300"
-                    >
-                      <ChevronRight className="h-3.5 w-3.5 text-emerald-400/70 shrink-0" />
+                  {cat.skills.map((skill, sIdx) => (
+                    <li key={sIdx} className="text-xs text-zinc-400 flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-emerald-400/60 shrink-0" />
                       <span>{skill}</span>
                     </li>
                   ))}
@@ -689,47 +630,48 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CERTIFICATIONS SECTION */}
-        <section id="certifications" className="space-y-6 pt-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Award className="h-5 w-5 text-emerald-400" />
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                Certifications &amp; Credentials
+        {/* CERTIFICATIONS & CREDENTIALS */}
+        <section id="credentials" className="space-y-10 pt-4 border-t border-white/[0.06]">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div className="space-y-1">
+              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-500">
+                Verifications
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-white">
+                Certifications &amp; Education
               </h2>
             </div>
-            <span className="text-xs font-mono text-zinc-400">OFFICIALLY VERIFIED</span>
+            <div className="text-xs font-mono text-zinc-500">OFFICIALLY VERIFIED</div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {certifications.map((cert, index) => (
+            {certifications.map((cert, idx) => (
               <div
-                key={index}
-                className="rounded-2xl border border-white/10 bg-zinc-900/50 p-5 flex flex-col justify-between hover:border-emerald-500/30 transition"
+                key={idx}
+                className="rounded-2xl border border-white/[0.06] bg-zinc-900/20 p-5 flex flex-col justify-between space-y-4 hover:border-emerald-500/30 transition"
               >
-                <div className="space-y-2.5">
+                <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="rounded bg-emerald-500/10 px-2 py-0.5 text-[11px] font-mono font-medium text-emerald-400 border border-emerald-500/20">
-                      {cert.badgeType}
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400">
+                      {cert.tag}
                     </span>
-                    <span className="text-xs text-zinc-400 font-mono">{cert.period}</span>
+                    <span className="text-[11px] font-mono text-zinc-500">{cert.period}</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white">{cert.name}</h3>
+                  <h3 className="text-sm font-medium text-white tracking-tight">{cert.name}</h3>
                   <div className="text-xs text-zinc-400">{cert.authority}</div>
 
-                  <div className="rounded-lg bg-black/40 p-2 text-[11px] font-mono text-zinc-400 border border-white/5 break-all">
-                    <span className="text-zinc-400">ID: </span>
-                    <span className="text-zinc-300">{cert.credentialId}</span>
+                  <div className="text-[10px] font-mono text-zinc-500 bg-black/30 p-1.5 rounded border border-white/[0.04] break-all">
+                    ID: {cert.credentialId}
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/5">
+                <div className="pt-2 border-t border-white/[0.04]">
                   <a
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 hover:text-emerald-300 transition"
+                    className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 transition"
                   >
                     <span>Verify Credential</span>
                     <ExternalLink className="h-3 w-3" />
@@ -739,103 +681,85 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Education Card */}
-          <div className="mt-6 rounded-2xl border border-white/10 bg-zinc-900/40 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          {/* Education Strip */}
+          <div className="rounded-2xl border border-white/[0.06] bg-zinc-900/20 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-emerald-400">
-                <GraduationCap className="h-6 w-6" />
+              <div className="h-10 w-10 rounded-xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-emerald-400">
+                <GraduationCap className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Bachelor of Technology (BTech)</h3>
-                <p className="text-sm text-zinc-400">IEET, Baddi</p>
+                <h3 className="text-base font-medium text-white">Bachelor of Technology (BTech)</h3>
+                <p className="text-xs text-zinc-400">IEET, Baddi</p>
               </div>
             </div>
-            <div className="font-mono text-xs text-zinc-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5 self-start sm:self-auto">
+            <div className="text-xs font-mono text-zinc-400 bg-white/[0.02] border border-white/[0.06] px-3 py-1 rounded-md self-start sm:self-auto">
               2011 – 2015
             </div>
           </div>
         </section>
 
         {/* CONTACT SECTION */}
-        <section id="contact" className="space-y-6 pt-6">
-          <div className="rounded-3xl border border-emerald-500/30 bg-gradient-to-b from-zinc-900/90 to-zinc-950 p-8 sm:p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
-
-            <div className="max-w-2xl space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 border border-emerald-500/20">
-                <Mail className="h-3.5 w-3.5" />
-                Let&apos;s Connect
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <section id="contact" className="space-y-8 pt-4 border-t border-white/[0.06]">
+          <div className="rounded-3xl border border-white/[0.08] bg-zinc-900/30 p-8 sm:p-12 space-y-6">
+            <div className="max-w-xl space-y-3">
+              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-400">
+                Connect
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-white">
                 Ready to optimize your platform infrastructure?
               </h2>
-
-              <p className="text-base text-zinc-300 leading-relaxed">
-                Whether you want to discuss eliminating manual operational toil, building
-                self-healing middleware pipelines, or integrating Agentic AI into enterprise
-                platforms, let&apos;s connect.
+              <p className="text-sm text-zinc-400 leading-relaxed font-normal">
+                Whether discussing self-healing middleware pipelines, eliminating manual operational
+                toil, or integrating Agentic AI frameworks, feel free to reach out.
               </p>
+            </div>
 
-              <div className="pt-4 flex flex-wrap gap-4">
-                <a
-                  href="mailto:sudd1593@gmail.com"
-                  className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-semibold text-zinc-950 hover:bg-emerald-400 transition shadow-lg shadow-emerald-500/20 active:scale-[0.98]"
-                >
-                  <Mail className="h-4 w-4" />
-                  Send an Email
-                </a>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="mailto:sudd1593@gmail.com"
+                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition"
+              >
+                <Mail className="h-3.5 w-3.5" />
+                Send Email
+              </a>
+              <a
+                href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.02] px-5 py-3 text-xs font-medium text-white hover:border-emerald-500/30 transition"
+              >
+                <LinkedinIcon className="h-3.5 w-3.5 text-emerald-400" />
+                LinkedIn Profile
+                <ArrowUpRight className="h-3 w-3 text-zinc-400" />
+              </a>
+            </div>
 
-                <a
-                  href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 hover:border-emerald-500/40 transition active:scale-[0.98]"
+            <div className="pt-6 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-zinc-400">
+              <div className="space-y-1">
+                <div className="font-mono text-[11px] text-zinc-500">DIRECT EMAIL</div>
+                <button
+                  onClick={() => copyToClipboard("sudd1593@gmail.com", "email")}
+                  className="text-zinc-200 hover:text-emerald-400 flex items-center gap-1.5 font-medium transition"
                 >
-                  <LinkedinIcon className="h-4 w-4 text-emerald-400" />
-                  Connect on LinkedIn
-                  <ArrowUpRight className="h-4 w-4 text-zinc-400" />
-                </a>
-
-                <a
-                  href="https://github.com/siddharthsharma-4805"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3.5 text-sm font-semibold text-zinc-300 hover:text-white hover:border-white/20 transition active:scale-[0.98]"
-                >
-                  <GithubIcon className="h-4 w-4 text-zinc-400" />
-                  GitHub Profile
-                  <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400" />
-                </a>
+                  <span>sudd1593@gmail.com</span>
+                  {copiedEmail ? <Check className="h-3 w-3 text-emerald-400" /> : <Copy className="h-3 w-3 text-zinc-500" />}
+                </button>
               </div>
 
-              <div className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-zinc-400">
-                <div className="space-y-1">
-                  <div className="text-zinc-400 font-mono">DIRECT EMAIL</div>
-                  <button
-                    onClick={() => copyToClipboard("sudd1593@gmail.com", "email")}
-                    className="text-white hover:text-emerald-400 flex items-center gap-1.5 font-medium transition"
-                  >
-                    <span>sudd1593@gmail.com</span>
-                    {copiedEmail ? <Check className="h-3 w-3 text-emerald-400" /> : <Copy className="h-3 w-3 text-zinc-400" />}
-                  </button>
-                </div>
+              <div className="space-y-1">
+                <div className="font-mono text-[11px] text-zinc-500">PHONE</div>
+                <button
+                  onClick={() => copyToClipboard("+91 97365 07557", "phone")}
+                  className="text-zinc-200 hover:text-emerald-400 flex items-center gap-1.5 font-medium transition"
+                >
+                  <span>+91 97365 07557</span>
+                  {copiedPhone ? <Check className="h-3 w-3 text-emerald-400" /> : <Copy className="h-3 w-3 text-zinc-500" />}
+                </button>
+              </div>
 
-                <div className="space-y-1">
-                  <div className="text-zinc-400 font-mono">PHONE</div>
-                  <button
-                    onClick={() => copyToClipboard("+91 97365 07557", "phone")}
-                    className="text-white hover:text-emerald-400 flex items-center gap-1.5 font-medium transition"
-                  >
-                    <span>+91 97365 07557</span>
-                    {copiedPhone ? <Check className="h-3 w-3 text-emerald-400" /> : <Copy className="h-3 w-3 text-zinc-400" />}
-                  </button>
-                </div>
-
-                <div className="space-y-1">
-                  <div className="text-zinc-400 font-mono">LOCATION</div>
-                  <div className="text-white font-medium">Delhi, India</div>
-                </div>
+              <div className="space-y-1">
+                <div className="font-mono text-[11px] text-zinc-500">LOCATION</div>
+                <div className="text-zinc-200 font-medium">Delhi, India</div>
               </div>
             </div>
           </div>
@@ -843,8 +767,8 @@ export default function Home() {
       </main>
 
       {/* FOOTER */}
-      <footer className="mt-20 border-t border-white/10 bg-zinc-950 py-10 text-xs text-zinc-400">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <footer className="border-t border-white/[0.06] py-12 text-xs text-zinc-500">
+        <div className="mx-auto max-w-5xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             &copy; {new Date().getFullYear()} Siddharth Sharma. Built with Next.js &amp; Tailwind CSS.
           </div>
@@ -853,20 +777,20 @@ export default function Home() {
               href="https://www.linkedin.com/in/siddharth-sharma-86646679//"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-emerald-400 transition"
+              className="hover:text-zinc-300 transition"
             >
-              LinkedIn Profile
+              LinkedIn
             </a>
             <a
-              href="https://github.com/siddharthsharma-4805"
+              href="https://github.com/BNM-IN/portfolio-website"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-emerald-400 transition"
+              className="hover:text-zinc-300 transition"
             >
               GitHub
             </a>
-            <a href="mailto:sudd1593@gmail.com" className="hover:text-emerald-400 transition">
-              sudd1593@gmail.com
+            <a href="mailto:sudd1593@gmail.com" className="hover:text-zinc-300 transition">
+              Email
             </a>
           </div>
         </div>
